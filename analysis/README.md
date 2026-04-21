@@ -6,9 +6,9 @@ Methodology: [`methodology.md`](../methodology.md).
 
 ## Scope of this package
 
-- **Written so far (PR 2 + PR 3):** configuration loader, Supabase writer, ONS observations ingest.
-- **To come:** drift calculation runner (PR 4), findings populator (PR 5).
-- **Follow-up:** non-ONS observations ingest (DBT BPE, HMRC MTG, OBR EFO, BoE Bank Rate) via a SQL migration with user-verified values.
+- **Written so far (PR 2, PR 3, PR 4):** configuration loader, Supabase writer, ONS observations ingest, drift calculation runner.
+- **To come:** findings populator (PR 5).
+- **Follow-up:** non-ONS observations ingest (DBT BPE, HMRC MTG, OBR EFO, BoE Bank Rate) via a SQL migration with user-verified values. §6.3, §6.4, and §6.5 of the drift runner skip until those observations load.
 
 ## Setup
 
@@ -64,11 +64,18 @@ analysis/
 │       ├── __init__.py
 │       ├── config.py              loads .env and environment
 │       ├── supabase_writer.py     typed insert helpers
-│       └── ingest/
+│       ├── ingest/
+│       │   ├── __init__.py
+│       │   ├── __main__.py         CLI: python -m mtd_drift.ingest
+│       │   ├── ons_history.py      ONS API history fetcher
+│       │   └── runner.py           orchestrator with dedup
+│       └── drift/
 │           ├── __init__.py
-│           ├── __main__.py         CLI: python -m mtd_drift.ingest
-│           ├── ons_history.py      ONS API history fetcher
-│           └── runner.py           orchestrator with dedup
+│           ├── __main__.py         CLI: python -m mtd_drift.drift
+│           ├── caveats.py          methodology §7 caveat flags
+│           ├── checksum.py         SHA-256 over drift inputs
+│           ├── reprice.py          §6.1 and §6.2 reprice formulas
+│           └── runner.py           drift orchestrator
 └── tests/
     ├── __init__.py
     ├── conftest.py
@@ -93,6 +100,17 @@ python -m mtd_drift.ingest \
 ```
 
 The fetch uses the ONS public timeseries API (`api.ons.gov.uk`). No API key is required. The URL pattern mirrors pda-platform's `pm_assumptions._fetch_ons`, so the provenance chain is the same.
+
+## Running the drift calculation
+
+Runs the five scoring steps from methodology §6 and writes one row to `mtd_2026.drift_calculations` per executed step. Steps whose required non-ONS data is not yet loaded are recorded as skipped with a clear reason.
+
+```bash
+python -m mtd_drift.drift
+python -m mtd_drift.drift --comparison-date 2026-03-01 --verbose
+```
+
+Determinism: every executed row stamps an SHA-256 checksum computed over its inputs (assumption_id, series_id, baseline_value, baseline_date, comparison_date, and the index values used). Re-running with identical inputs produces identical drift values and identical checksums.
 
 ## What the Supabase writer does
 
