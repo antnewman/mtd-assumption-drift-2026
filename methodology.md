@@ -127,6 +127,6 @@ If HMRC publishes a new TIIN or AOA before publication, the analysis is re-run a
 
 ## 12. Contacts
 
-Author: Ant Newman CEng (MIET, MIEEE), TortoiseAI. ORCID [0000-0002-8612-3647](https://orcid.org/0000-0002-8612-3647).
+Author: Ant Newman, TortoiseAI. ORCID [0000-0002-8612-3647](https://orcid.org/0000-0002-8612-3647).
 
 Correspondence on the methodology is welcome as issues on this repository, or to the author's published contact channels.
