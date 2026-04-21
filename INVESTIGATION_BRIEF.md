@@ -5,7 +5,7 @@ Tax Digital business case at the point of £50k mandation*
 
 **Author:** Ant Newman (ORCID 0000-0002-8612-3647)
 **Affiliation:** TortoiseAI
-**Status:** In progress (April 2026)
+**Status:** Paused (April 2026). Resumes after publication of the Crossrail retrospective (target: end of June 2026).
 **Licence:** CC BY 4.0 (written content), MIT (code and data)
 
 ## Investigation question
@@ -158,3 +158,22 @@ Zenodo release at publication. DOI tracked in CITATION.cff.
 
 Independent tax-policy review is a prerequisite for publication. No finding
 is published without a reviewer's sign-off recorded in the `reviews` table.
+
+## Sequencing note
+
+This investigation was originally scheduled as the first published case in
+the PDA Investigations programme. In April 2026, the decision was taken to
+publish the Crossrail retrospective first, for three reasons:
+
+- The retrospective case provides stronger pedagogical value for a first
+  demonstration, because the reader can check the tool's output against
+  published outcomes.
+- MTD methodology requires tax-policy review before publication; that
+  reviewer outreach runs in parallel with the Crossrail work.
+- The external data for Crossrail is historic and does not require ongoing
+  refresh, simplifying the first end-to-end run of the PDA Investigations
+  workflow.
+
+All methodology, assumptions, data, and schema work for this investigation
+remains in place. When the Crossrail retrospective is published and the
+tax-policy reviewer is confirmed, work resumes here without rework.
