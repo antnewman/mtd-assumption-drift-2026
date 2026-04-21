@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mtd-drift-analysis"
+version = "0.1.0"
+description = "Analysis scripts for the MTD assumption drift investigation"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [
+  { name = "Ant Newman" }
+]
+keywords = [
+  "making-tax-digital",
+  "hmrc",
+  "assumption-drift",
+  "public-data",
+  "pda-investigations",
+]
+dependencies = [
+  "supabase>=2.0,<3.0",
+  "python-dotenv>=1.0,<2.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0",
+  "pytest-asyncio>=0.23",
+  "pytest-mock>=3.12",
+]
+
+[project.urls]
+Homepage = "https://github.com/antnewman/mtd-assumption-drift-2026"
+Repository = "https://github.com/antnewman/mtd-assumption-drift-2026"
+Investigation = "https://github.com/antnewman/mtd-assumption-drift-2026/blob/main/INVESTIGATION_BRIEF.md"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+testpaths = ["tests"]
+addopts = "-ra -q"
+asyncio_mode = "auto"
