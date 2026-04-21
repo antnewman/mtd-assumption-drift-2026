@@ -3,7 +3,7 @@
 **Working title:** *Taking inflation into account: a reassessment of the Making
 Tax Digital business case at the point of £50k mandation*
 
-**Author:** Ant Newman CEng (ORCID 0000-0002-8612-3647)
+**Author:** Ant Newman (ORCID 0000-0002-8612-3647)
 **Affiliation:** TortoiseAI
 **Status:** In progress (April 2026)
 **Licence:** CC BY 4.0 (written content), MIT (code and data)

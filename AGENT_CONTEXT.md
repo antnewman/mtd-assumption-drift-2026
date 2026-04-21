@@ -24,7 +24,7 @@ findings that cannot be reproduced from public inputs alone.
 
 ## Author
 
-Ant Newman CEng (MIET, MIEEE), CEO and co-founder of TortoiseAI.
+Ant Newman, CEO and co-founder of TortoiseAI.
 ORCID: 0000-0002-8612-3647.
 Website: tortoiseai.co.uk.
 Publications: https://scholar.google.com/citations?user=... (see author's
