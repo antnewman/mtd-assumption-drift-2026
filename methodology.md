@@ -115,7 +115,7 @@ Analysis is deterministic given the inputs. Each run stamps the inputs, the plat
 
 ## 10. Independent review
 
-No finding is published without an independent domain reviewer's sign-off recorded in `pda_shared.reviews`. Reviewer consent to be named is explicit per review. The target reviewer profile is a tax-policy practitioner with ICAEW or CIOT credentialling; a programme-assurance reviewer (ex-NAO or ex-IPA) may be added for the methodological framing. The review is not pro forma: a sceptical or negative review is published alongside the finding, not hidden from it.
+No finding is published without an independent domain reviewer's sign-off recorded in `pda_shared.reviews`. Reviewer consent to be named is explicit per review. The target reviewer profile is an independent domain expert in UK tax administration, typically a Chartered Tax Adviser, an ICAEW member with tax policy specialism, or an academic with published work on small-business tax compliance. A programme-assurance reviewer (for example, someone with NAO or IPA experience) may be added for the methodological framing where appropriate. The review is not pro forma: a sceptical or negative review is published alongside the finding, not hidden from it.
 
 ## 11. Publication and update policy
 
