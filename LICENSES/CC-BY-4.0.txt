@@ -1,0 +1,28 @@
+Creative Commons Attribution 4.0 International Licence
+SPDX-License-Identifier: CC-BY-4.0
+
+Copyright (c) 2026 Ant Newman, TortoiseAI
+
+This work is licensed under the Creative Commons Attribution 4.0
+International Licence. To view the full legal code, see:
+
+  https://creativecommons.org/licenses/by/4.0/legalcode.txt
+
+For a human-readable summary, see:
+
+  https://creativecommons.org/licenses/by/4.0/
+
+You are free to share and to adapt the material for any purpose, including
+commercially. The only requirement is attribution: you must give
+appropriate credit, provide a link to the licence, and indicate if changes
+were made. You may do so in any reasonable manner, but not in any way that
+suggests the licensor endorses you or your use. No additional restrictions
+may be applied.
+
+Suggested attribution:
+
+  Newman, A. (2026). MTD Assumption Drift 2026.
+  Licensed under CC BY 4.0.
+  https://github.com/antnewman/mtd-assumption-drift-2026
+
+Full citation metadata is in the repository's CITATION.cff file.

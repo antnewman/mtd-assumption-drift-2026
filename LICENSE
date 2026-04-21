@@ -1,0 +1,10 @@
+# Licences
+
+This repository is dual-licensed.
+
+- **Written content** (README.md, methodology.md, INVESTIGATION_BRIEF.md, AGENT_CONTEXT.md, findings, and narrative drafts) is licensed under the Creative Commons Attribution 4.0 International Licence. See [LICENSES/CC-BY-4.0.txt](LICENSES/CC-BY-4.0.txt).
+- **Code and structured data** (analysis scripts, the YAML files under `data/`, any SQL migrations) are licensed under the MIT Licence. See [LICENSES/MIT.txt](LICENSES/MIT.txt).
+
+When reusing, cite this repository per [CITATION.cff](CITATION.cff).
+
+Copyright (c) 2026 Ant Newman, TortoiseAI.

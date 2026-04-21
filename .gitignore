@@ -1,0 +1,56 @@
+# Private working notes
+NOTES.md
+
+# Environment and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+credentials/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+.venv/
+env/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Build
+dist/
+build/
+*.egg-info/
+
+# Editor and agent harness state
+.vscode/
+.idea/
+*.swp
+*.swo
+.cursor/
+.claude/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Analysis output artefacts that should be regenerated, not stored
+/tmp/
+*.log
+
+# Supabase local
+supabase/.temp/
+supabase/.env
