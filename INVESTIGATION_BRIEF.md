@@ -5,7 +5,7 @@ Tax Digital business case at the point of £50k mandation*
 
 **Author:** Ant Newman (ORCID 0000-0002-8612-3647)
 **Affiliation:** TortoiseAI
-**Status:** In progress (April 2026). Runs in parallel with the Crossrail retrospective.
+**Status:** In progress (April 2026). Running in parallel with the Crossrail retrospective case. Publication gated on completion of independent tax-policy review; reviewer outreach is active.
 **Licence:** CC BY 4.0 (written content), MIT (code and data)
 
 ## Investigation question
@@ -161,8 +161,17 @@ is published without a reviewer's sign-off recorded in the `reviews` table.
 
 ## Sequencing note
 
-This investigation runs in parallel with the Crossrail retrospective inside
-the PDA Investigations programme. The two cases share the `pda_shared`
-Supabase tables and the PDA Platform tooling; their case-specific schemas,
-methodologies, and reviewers are independent. Progress on either case does
-not block the other.
+This investigation was paused for approximately one week in April 2026,
+pending publication of the Crossrail retrospective. That decision was
+reversed in favour of running both investigations in parallel.
+
+The two investigations now progress concurrently. The Crossrail
+retrospective remains the target first publication for the programme,
+because its outcome can be verified by any reader against the public
+record. This MTD investigation continues its methodology, data, and
+analysis work in parallel, with publication gated on completion of
+independent tax-policy review per section 10 of methodology.md.
+Reviewer outreach is active at the time of writing (April 2026).
+
+All methodology, assumptions, data, and schema work for this
+investigation remains in place throughout.
