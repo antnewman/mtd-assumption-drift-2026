@@ -4,7 +4,7 @@
 
 **Part of:** [PDA Investigations](https://github.com/antnewman/pda-investigations)
 **Tool:** [PDA Platform](https://github.com/antnewman/pda-platform)
-**Author:** Ant Newman CEng (MIET, MIEEE), TortoiseAI. ORCID: [0000-0002-8612-3647](https://orcid.org/0000-0002-8612-3647).
+**Author:** Ant Newman, TortoiseAI. ORCID: [0000-0002-8612-3647](https://orcid.org/0000-0002-8612-3647).
 **Status:** In progress (April 2026).
 **Licence:** [CC BY 4.0](LICENSES/CC-BY-4.0.txt) for written content, [MIT](LICENSES/MIT.txt) for code and data.
 
