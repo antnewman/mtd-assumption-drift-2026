@@ -1,0 +1,126 @@
+# External data series for MTD 2026 investigation
+# Each entry maps to one row in pda_shared.external_series
+# The actual time-series observations go into pda_shared.external_observations
+# in a separate loading step
+
+series:
+  - series_code: ONS-D7NN
+    series_name: "CPI annual rate: Services, 2015=100"
+    provider: "ONS"
+    unit: percent
+    frequency: monthly
+    lag_days: 30
+    status: accredited
+    source_url: "https://www.ons.gov.uk/economy/inflationandpriceindices/timeseries/d7nn/mm23"
+    notes: >
+      Primary series for repricing the services-component compliance cost
+      assumption. Services inflation has diverged meaningfully from headline
+      CPI over 2024-25 and into 2026. Using all-items CPI (D7BT) instead
+      would be methodologically wrong for a services cost. February 2026
+      value: 4.3% annual.
+
+  - series_code: ONS-D7F5
+    series_name: "CPI index: Services, 2015=100"
+    provider: "ONS"
+    unit: index_2015_100
+    frequency: monthly
+    lag_days: 30
+    status: accredited
+    source_url: "https://www.ons.gov.uk/economy/inflationandpriceindices/timeseries/d7f5/mm23"
+    notes: >
+      Services CPI index level, for level-based reprice rather than
+      rate-based. Useful when comparing price levels at two different
+      baseline dates (e.g. September 2025 TIIN vs April 2026 point of
+      mandation).
+
+  - series_code: ONS-D7BT
+    series_name: "CPI index: All items, 2015=100"
+    provider: "ONS"
+    unit: index_2015_100
+    frequency: monthly
+    lag_days: 30
+    status: accredited
+    source_url: "https://www.ons.gov.uk/economy/inflationandpriceindices/timeseries/d7bt/mm23"
+    notes: >
+      Headline all-items CPI index. Included for comparison and disclosure
+      only. The research brief originally cited this series as the reprice
+      measure; this was incorrect. We use D7NN for services costs and note
+      the divergence between the two explicitly in the methodology.
+
+  - series_code: ONS-D7G7
+    series_name: "CPI annual rate: All items, 2015=100"
+    provider: "ONS"
+    unit: percent
+    frequency: monthly
+    lag_days: 30
+    status: accredited
+    source_url: "https://www.ons.gov.uk/economy/inflationandpriceindices/timeseries/d7g7/mm23"
+    notes: >
+      Headline all-items CPI annual rate. For comparison with D7NN.
+      February 2026 value: 3.0% annual.
+
+  - series_code: DBT-BPE-2025
+    series_name: "UK Business Population Estimates 2025"
+    provider: "DBT"
+    unit: count
+    frequency: annual
+    lag_days: 275
+    status: in_development
+    source_url: "https://www.gov.uk/government/statistics/business-population-estimates-2025"
+    notes: >
+      Department for Business and Trade estimate of the UK private-sector
+      business population. At the start of 2025: 5.7 million businesses,
+      of which 4.3 million had no employees. Reclassified to "official
+      statistics in development" in 2024, a step down from "accredited
+      official statistics". The reclassification is tied to the Labour
+      Force Survey data used to estimate the unregistered portion of the
+      population. This status must be disclosed when the in-scope
+      population assumption is discussed.
+
+  - series_code: HMRC-MTG-2025
+    series_name: "Measuring Tax Gaps: Self Assessment tax gap"
+    provider: "HMRC"
+    unit: percent
+    frequency: annual
+    lag_days: 730
+    status: accredited
+    source_url: "https://www.gov.uk/government/statistics/measuring-tax-gaps"
+    notes: >
+      HMRC's estimate of the tax gap attributable to Self Assessment
+      businesses. The 2025 edition (published June 2025) reports the
+      2023-24 tax year. The two-year lag means we cannot identify whether
+      the SA tax gap has moved since the September 2025 TIIN was
+      published; only whether the TIIN's 18.5% figure is consistent with
+      the most recently published measurement. The 2026 edition (2024-25
+      data) is expected approximately June 2026, after our publication
+      window.
+
+  - series_code: OBR-EFO-2026-03
+    series_name: "OBR Economic and Fiscal Outlook, March 2026"
+    provider: "OBR"
+    unit: narrative_plus_scorecard
+    frequency: biannual
+    lag_days: 0
+    status: accredited
+    source_url: "https://obr.uk/efo/"
+    notes: >
+      The Office for Budget Responsibility's biannual macroeconomic and
+      fiscal forecast. The March 2026 edition is the most recent at the
+      time of this investigation. Contains OBR's certification of MTD
+      additional tax revenue forecasts and the underlying tax-gap
+      trajectory assumed at fiscal events. Used for cross-checking the
+      ATR and ROI downstream assumptions.
+
+  - series_code: BOE-BASERATE
+    series_name: "Bank of England official Bank Rate"
+    provider: "Bank of England"
+    unit: percent
+    frequency: event_driven
+    lag_days: 0
+    status: accredited
+    source_url: "https://www.bankofengland.co.uk/monetary-policy/the-interest-rate-bank-rate"
+    notes: >
+      The Bank Rate as set by the Monetary Policy Committee. Used for
+      discount rate sensitivity analysis where the business case applies
+      a Green Book 3.5% real discount rate. Ancillary rather than primary
+      to the investigation.

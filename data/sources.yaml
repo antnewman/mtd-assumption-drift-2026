@@ -1,0 +1,106 @@
+# Source documents for MTD 2026 investigation
+# Each entry maps to one row in pda_shared.source_documents
+# citation_key is the stable short reference used elsewhere
+
+sources:
+  - citation_key: HMRC-TIIN-MTD-ITSA-2024-02
+    title: "Making Tax Digital for Income Tax Self Assessment for sole traders and landlords"
+    author: "HM Revenue and Customs"
+    publisher: "UK Government"
+    publication_date: 2024-02-22
+    last_updated: 2025-09-02
+    url: "https://www.gov.uk/government/publications/extension-of-making-tax-digital-for-income-tax-self-assessment-to-sole-traders-and-landlords/making-tax-digital-for-income-tax-self-assessment-for-sole-traders-and-landlords"
+    document_type: TIIN
+    notes: >
+      Primary source for per-business transitional cost, total transitional
+      cost, in-scope population, and SA tax gap assumptions. Originally
+      published February 2024, republished September 2025 with scope changes
+      announced at Spring Statement 2025 noted in the preamble. The core
+      SCM-derived cost figures are unchanged between the two versions.
+
+  - citation_key: HMRC-AOA-MTD-2025-06
+    title: "Making Tax Digital Programme Accounting Officer's Assessment summary (updated)"
+    author: "HM Revenue and Customs"
+    publisher: "UK Government"
+    publication_date: 2025-06-04
+    url: "https://www.gov.uk/government/publications/making-tax-digital-programme-accounting-officer-assessment-updated/making-tax-digital-programme-accounting-officers-assessment-summary-updated"
+    document_type: AOA
+    notes: >
+      Signed by John-Paul Marks, Chief Executive HMRC, on 4 June 2025.
+      Supersedes the April 2024 AOA. Source for the overall programme
+      BCR 1.3:1 and ROI 3.8:1. Notes that the BCR dropped from 2.2:1 and the
+      ROI from 4.8:1 as a direct consequence of including full lifecycle
+      customer costs, scope changes, and updated ATR estimates.
+
+  - citation_key: HMRC-TIIN-MTD-ITSA-2028-20k
+    title: "Reduction of the mandation threshold from £30,000 to £20,000 from April 2028"
+    author: "HM Revenue and Customs"
+    publisher: "UK Government"
+    publication_date: 2025-03-26
+    url: "https://www.gov.uk/government/publications/making-tax-digital-for-income-tax-self-assessment-reducing-the-mandation-threshold-from-30000-to-20000-from-april-2028/reduction-of-the-mandation-threshold-from-30000-to-20000-from-april-2028"
+    document_type: TIIN
+    notes: >
+      TIIN covering the £20k threshold cohort announced at Spring Statement
+      2025. Cites approximately 970,000 additional individuals brought into
+      scope for April 2028. Referenced here for completeness; the primary
+      investigation focuses on the £50k cohort mandated April 2026.
+
+  - citation_key: NAO-MTD-2023
+    title: "Progress with Making Tax Digital"
+    author: "Comptroller and Auditor General, National Audit Office"
+    publisher: "UK National Audit Office"
+    publication_date: 2023-06-12
+    url: "https://www.nao.org.uk/reports/progress-with-making-tax-digital/"
+    document_type: NAO_REPORT
+    notes: >
+      HC 1319, Session 2022-23. The NAO's investigation of progress with MTD.
+      Found that HMRC had understated customer costs in successive business
+      cases: excluded £1.5bn upfront transitional costs in May 2022 business
+      case, and excluded upfront customer costs entirely in March 2023
+      business case. Made 13 recommendations. Per the June 2025 AOA, 11
+      have been implemented and 2 are on track for 2025.
+
+  - citation_key: PAC-MTD-2023
+    title: "Progress with Making Tax Digital"
+    author: "House of Commons Committee of Public Accounts"
+    publisher: "UK Parliament"
+    publication_date: 2023-11-24
+    url: "https://publications.parliament.uk/pa/cm5803/cmselect/cmpubacc/1333/report.html"
+    document_type: PAC_REPORT
+    notes: >
+      HC 1333, 80th report of Session 2022-23. The PAC report that followed
+      the NAO investigation and oral evidence from Jim Harra, Permanent
+      Secretary and Chief Executive HMRC. Conclusion 4 is the anchor for
+      this investigation: "HMRC have not been open enough about the
+      substantial costs that Making Tax Digital will impose on many
+      taxpayers." Associated recommendation: HMRC should "fully reassess
+      the costs for customers to comply with Making Tax Digital for Self
+      Assessment, taking into account inflation and any significant design
+      changes".
+
+  - citation_key: HMT-TreasuryMinutes-MTD-2024-02
+    title: "Treasury Minutes: Government response to PAC 80th report (Progress with Making Tax Digital)"
+    author: "HM Treasury"
+    publisher: "UK Government"
+    publication_date: 2024-02-08
+    url: "https://www.gov.uk/government/publications/treasury-minutes-february-2024"
+    document_type: TREASURY_MINUTES
+    notes: >
+      HMG's formal response to each of the PAC's five substantive
+      recommendations. Of five, HMG agreed with two, disagreed with three.
+      Used as corroborating evidence that the PAC critique is on the record
+      and was formally engaged with by HMRC.
+
+  - citation_key: HMRC-MTG-2025
+    title: "Measuring tax gaps 2025 edition: tax gap estimates for 2023 to 2024"
+    author: "HM Revenue and Customs"
+    publisher: "UK Government"
+    publication_date: 2025-06-19
+    url: "https://www.gov.uk/government/statistics/measuring-tax-gaps"
+    document_type: OFFICIAL_STATISTICS
+    notes: >
+      The 2025 edition of HMRC's annual tax gap publication, covering the
+      2023-24 tax year. Reports total UK tax gap at 5.3% / £46.8bn and
+      VAT gap at 5.0%. Used to cross-check the Self Assessment tax gap
+      assumption (18.5%) cited in the MTD TIIN. Note: the 2026 edition
+      covering 2024-25 will publish approximately June 2026.

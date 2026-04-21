@@ -1,0 +1,59 @@
+cff-version: 1.2.0
+title: "Making Tax Digital assumption drift at the point of £50k mandation"
+message: "If you cite this investigation, please use the metadata below."
+type: dataset
+authors:
+  - family-names: Newman
+    given-names: Ant
+    affiliation: "TortoiseAI"
+    orcid: "https://orcid.org/0000-0002-8612-3647"
+repository-code: "https://github.com/antnewman/mtd-assumption-drift-2026"
+url: "https://github.com/antnewman/mtd-assumption-drift-2026"
+license:
+  - MIT
+  - CC-BY-4.0
+date-released: "2026-04-21"
+keywords:
+  - Making Tax Digital
+  - HMRC
+  - Self Assessment
+  - business case
+  - assumption drift
+  - public accounts
+  - UK tax policy
+  - inflation
+  - compliance cost
+abstract: >-
+  A public-data reassessment of the five operational assumptions in HMRC's
+  Making Tax Digital for Income Tax Self Assessment business case, scored
+  against current public external series, at the point of the £50k mandation
+  threshold in April 2026. Operationalises the recommendation of the House
+  of Commons Public Accounts Committee, 80th report of Session 2022-23
+  (HC 1333), to reassess customer compliance costs taking inflation into
+  account. Uses the open-source PDA Platform.
+preferred-citation:
+  type: report
+  title: "Making Tax Digital assumption drift at the point of £50k mandation"
+  authors:
+    - family-names: Newman
+      given-names: Ant
+      affiliation: "TortoiseAI"
+      orcid: "https://orcid.org/0000-0002-8612-3647"
+  year: 2026
+  publisher: "TortoiseAI"
+  location: "London, United Kingdom"
+references:
+  - type: report
+    title: "Progress with Making Tax Digital"
+    authors:
+      - name: "House of Commons Committee of Public Accounts"
+    year: 2023
+    notes: "HC 1333, 80th report of Session 2022-23"
+    url: "https://publications.parliament.uk/pa/cm5803/cmselect/cmpubacc/1333/report.html"
+  - type: software
+    title: "PDA Platform"
+    authors:
+      - family-names: Newman
+        given-names: Ant
+        affiliation: "TortoiseAI"
+    url: "https://github.com/antnewman/pda-platform"
