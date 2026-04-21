@@ -6,9 +6,8 @@ Methodology: [`methodology.md`](../methodology.md).
 
 ## Scope of this package
 
-- **Written so far (PR 2, PR 3, PR 4):** configuration loader, Supabase writer, ONS observations ingest, drift calculation runner.
-- **To come:** findings populator (PR 5).
-- **Follow-up:** non-ONS observations ingest (DBT BPE, HMRC MTG, OBR EFO, BoE Bank Rate) via a SQL migration with user-verified values. §6.3, §6.4, and §6.5 of the drift runner skip until those observations load.
+- **Written so far (PR 2 - PR 5):** configuration loader, Supabase writer, ONS observations ingest, drift calculation runner, findings populator.
+- **Follow-up:** non-ONS observations ingest (DBT BPE, HMRC MTG, OBR EFO, BoE Bank Rate) via a SQL migration with user-verified values. §6.3, §6.4, and §6.5 of the drift runner skip until those observations load, which in turn leaves findings 3, 4, and 5 as draft skips.
 
 ## Setup
 
@@ -69,19 +68,26 @@ analysis/
 │       │   ├── __main__.py         CLI: python -m mtd_drift.ingest
 │       │   ├── ons_history.py      ONS API history fetcher
 │       │   └── runner.py           orchestrator with dedup
-│       └── drift/
+│       ├── drift/
+│       │   ├── __init__.py
+│       │   ├── __main__.py         CLI: python -m mtd_drift.drift
+│       │   ├── caveats.py          methodology §7 caveat flags
+│       │   ├── checksum.py         SHA-256 over drift inputs
+│       │   ├── reprice.py          §6.1 and §6.2 reprice formulas
+│       │   └── runner.py           drift orchestrator
+│       └── findings/
 │           ├── __init__.py
-│           ├── __main__.py         CLI: python -m mtd_drift.drift
-│           ├── caveats.py          methodology §7 caveat flags
-│           ├── checksum.py         SHA-256 over drift inputs
-│           ├── reprice.py          §6.1 and §6.2 reprice formulas
-│           └── runner.py           drift orchestrator
+│           ├── __main__.py         CLI: python -m mtd_drift.findings
+│           └── populate.py         template parsing + insert
 └── tests/
     ├── __init__.py
     ├── conftest.py
     ├── test_supabase_writer.py
     ├── test_ons_history.py
-    └── test_ingest_runner.py
+    ├── test_ingest_runner.py
+    ├── test_drift_reprice.py
+    ├── test_drift_runner.py
+    └── test_findings_populate.py
 ```
 
 ## Running the ONS ingest
@@ -111,6 +117,17 @@ python -m mtd_drift.drift --comparison-date 2026-03-01 --verbose
 ```
 
 Determinism: every executed row stamps an SHA-256 checksum computed over its inputs (assumption_id, series_id, baseline_value, baseline_date, comparison_date, and the index values used). Re-running with identical inputs produces identical drift values and identical checksums.
+
+## Populating findings
+
+```bash
+python -m mtd_drift.findings
+python -m mtd_drift.findings --findings-dir ../findings --verbose
+```
+
+Reads each markdown template under `findings/` (excluding `README.md`), matches each to the most recent `mtd_2026.drift_calculations` row for its `assumption_key`, and inserts a `mtd_2026.findings` row with `published = false` and `supporting_drift_ids` populated. Templates whose matching drift row does not exist are skipped with a clear reason.
+
+Flipping a finding to `published = true` is a separate SQL step keyed by `finding_key`, taken only after reviewer sign-off is recorded in `pda_shared.reviews`.
 
 ## What the Supabase writer does
 
