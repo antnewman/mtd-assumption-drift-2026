@@ -6,8 +6,9 @@ Methodology: [`methodology.md`](../methodology.md).
 
 ## Scope of this package
 
-- **Written so far (PR 2):** configuration loader and Supabase writer skeleton.
-- **To come:** ONS ingest adapter (PR 3), drift calculation runner (PR 4), findings populator (PR 5).
+- **Written so far (PR 2 + PR 3):** configuration loader, Supabase writer, ONS observations ingest.
+- **To come:** drift calculation runner (PR 4), findings populator (PR 5).
+- **Follow-up:** non-ONS observations ingest (DBT BPE, HMRC MTG, OBR EFO, BoE Bank Rate) via a SQL migration with user-verified values.
 
 ## Setup
 
@@ -62,12 +63,36 @@ analysis/
 │   └── mtd_drift/
 │       ├── __init__.py
 │       ├── config.py              loads .env and environment
-│       └── supabase_writer.py     typed insert helpers
+│       ├── supabase_writer.py     typed insert helpers
+│       └── ingest/
+│           ├── __init__.py
+│           ├── __main__.py         CLI: python -m mtd_drift.ingest
+│           ├── ons_history.py      ONS API history fetcher
+│           └── runner.py           orchestrator with dedup
 └── tests/
     ├── __init__.py
     ├── conftest.py
-    └── test_supabase_writer.py
+    ├── test_supabase_writer.py
+    ├── test_ons_history.py
+    └── test_ingest_runner.py
 ```
+
+## Running the ONS ingest
+
+Populates `pda_shared.external_observations` with monthly values for the four ONS series used in the investigation (D7NN, D7F5, D7G7, D7BT) from 2021 onward. Idempotent; re-running inserts only new observations.
+
+```bash
+# From any directory with .env resolvable (default searches repo root):
+python -m mtd_drift.ingest
+
+# Optional: narrow to a subset of indicators or a later start date.
+python -m mtd_drift.ingest \
+    --since 2024-01-01 \
+    --indicators services_cpi_index services_cpi_rate \
+    --verbose
+```
+
+The fetch uses the ONS public timeseries API (`api.ons.gov.uk`). No API key is required. The URL pattern mirrors pda-platform's `pm_assumptions._fetch_ons`, so the provenance chain is the same.
 
 ## What the Supabase writer does
 
